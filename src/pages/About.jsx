@@ -6,6 +6,7 @@ import {
   PiLinkSimple,
   PiUserCircle,
 } from "react-icons/pi";
+import { FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function About() {
   return (
@@ -27,7 +28,7 @@ export default function About() {
         </motion.h1>
         <p className="max-w-2xl mx-auto text-lg text-slate-300">
           A visual explorer for mirrored Ethereum block claims, built on top of the Pi² Devnet.
-          This tool helps users inspect, verify, and track proofs submitted to the VSL (Verifiable State Layer).
+          This tool helps users inspect, verify, and track proofs submitted to the VSL (Verifiable Settlement Layer).
         </p>
       </section>
 
@@ -52,8 +53,12 @@ export default function About() {
       <section className="bg-slate-900 py-16 px-4 text-center">
         <h2 className="text-3xl font-bold text-white mb-8">Contributors</h2>
         <div className="flex flex-wrap justify-center gap-8">
-          <ContributorCard name="Abdulmalik Badmus" role="Frontend Developer" />
-          {/* Add more contributors as needed */}
+          <ContributorCard
+            name="Abdulmalik Badmus"
+            role="Frontend Developer"
+            github="https://github.com/Abdulmalik-svg"
+            twitter="https://x.com/codexmalik?t=SMY0cHBQ1wJZwO4Lz8GVdg&s=09"
+          />
         </div>
       </section>
 
@@ -138,7 +143,7 @@ const features = [
 ];
 
 // 🧱 Contributor Card
-function ContributorCard({ name, role }) {
+function ContributorCard({ name, role, github, twitter }) {
   return (
     <motion.div
       whileHover={{ scale: 1.05 }}
@@ -147,7 +152,29 @@ function ContributorCard({ name, role }) {
     >
       <PiUserCircle size={40} className="text-yellow-400 mb-2" />
       <h4 className="text-lg font-semibold text-white">{name}</h4>
-      <p className="text-sm text-slate-400">{role}</p>
+      <p className="text-sm text-slate-400 mb-2">{role}</p>
+      <div className="flex gap-3">
+        {github && (
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-yellow-400"
+          >
+            <FaGithub size={20} />
+          </a>
+        )}
+        {twitter && (
+          <a
+            href={twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-yellow-400"
+          >
+            <FaTwitter size={20} />
+          </a>
+        )}
+      </div>
     </motion.div>
   );
 }
