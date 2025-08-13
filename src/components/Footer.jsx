@@ -37,7 +37,7 @@ export default function Footer() {
 
       {/* BOTTOM: Legal + Attribution */}
       <div className="border-t border-gray-800 mt-10 pt-6 text-center text-xs text-gray-500">
-        &copy; {year} Pi² Mirror Explorer. Built by <span className="text-white">YourName</span>. All rights reserved.
+        &copy; {year} Pi² Mirror Explorer. Built by <span className="text-white">Badmus Abdulmalik</span>. All rights reserved.
       </div>
     </footer>
   );
